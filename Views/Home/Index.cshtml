@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h1>F1 Team Name</h1>
+        <h2>Lorem Ipsum.</h2>
+        <p class="lead">Racing since 19xx.</p>
+        <p><a href="@Url.Action("Team", "Home")" class="btn btn-primary btn-lg">Our Team &raquo;</a></p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <a href="@Url.Action("Index", "Results")"><img src="~/Content/Images/Index/results-column.jpg" alt="Link to F1 Team's results" class="img-responsive index-col-img" /></a>
+            <div class="img-caption"><h1>Recent Results</h1></div>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Store", "Home")"><img src="~/Content/Images/Index/store-column.jpg" alt="F1 Team's new spring collection" class="img-responsive index-col-img" /></a>
+            <div class="img-caption"><h1>New Spring Collection</h1></div>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Team", "Home")"><img src="~/Content/Images/Index/team-column.jpg" alt="The team at F1 Team" class="img-responsive index-col-img" /></a>
+            <div class="img-caption"><h1>Our Team</h1></div>
+        </div>
+    </div>
+</div>

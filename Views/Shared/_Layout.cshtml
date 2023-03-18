@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("F1 Team", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Team", "Team", "Home")</li>
+                    <li>@Html.ActionLink("Store", "Store", "Home")</li>
+                    <li>@Html.ActionLink("Previous Driver List", "Index", "Categories")</li>
+                    <li>@Html.ActionLink("View results", "Index", "Results")</li>
+                </ul>
+                @using (Html.BeginForm("Index", "Results", FormMethod.Get, new {@class = "navbar-form navbar-right"}))
+            {
+                <div class="form-group">
+                    @Html.TextBox("Search", null, new {@class="form-control", @placeHolder="Search for results"});
+                </div>
+                <button type="submit" class="btn btn-default">Find Results</button>
+            }
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="row-no-gutters">
+                <div id="footer-credits" class="col-xs-4 col-sm-6">
+                    <address>
+                        Written by <a href="mailto:lewiskendalljones@gmail.com">Lewis Kendall-Jones</a>
+                    </address>
+                    <a target="_blank" href="@Url.Action("Copyright", "Home")" class="copyright-acknowledgements">Copyright Acknowledgements</a>
+                    @*<hr />
+                                  /// Unusable from a local machine.
+                    <a target="_blank" href="http://validator.w3.org/check/referer">HTML5 Validation</a>
+                    <br />
+                    <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer">CSS Validation</a>*@
+                </div>
+                <div id="footer-socials" class="col-xs-4 col-xs-offset-4 col-sm-3 col-sm-offset-3">
+                    <div class="row">
+                        <div class="col-xs-6"><a href="https://www.snapchat.com" target="_blank"><img src="~/Content/Images/Footer/sc-icon.png" alt="Snapchat Logo (Link)" class="img-responsive" /></a></div>
+                        <div class="col-xs-6"><a href="https://www.twitter.com" target="_blank"><img src="~/Content/Images/Footer/tw-icon.png" alt="Twitter Logo (Link)" class="img-responsive" /></a></div>
+                        <div class="col-xs-6"><a href="https://www.facebook.com" target="_blank"><img src="~/Content/Images/Footer/fb-icon.png" alt="Facebook Logo (Link)" class="img-responsive" /></a></div>
+                        <div class="col-xs-6"><a href="https://www.instagram.com" target="_blank"><img src="~/Content/Images/Footer/ig-icon.png" alt="Instagram Logo (Link)" class="img-responsive" /></a></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
