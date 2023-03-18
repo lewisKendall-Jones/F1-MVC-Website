@@ -1,4 +1,4 @@
-#F1 .NET MVC
+# F1 .NET MVC
 A F1 website template created using .NET MVC and Entity Framework, featuring fully implemented models with LINQ queries such as filtering and searching, Bootstrap view 
 layouts, and controller based navigation.
 
